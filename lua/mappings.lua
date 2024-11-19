@@ -24,3 +24,7 @@ map("n", "<leader>B", function()
 end, { desc = "Close unused buffers", silent = true })
 
 map("n", "<C-j>", "<cmd> TagbarToggle fj<CR>", { desc = "tagbar toggle" })
+
+map({ "n", "v" }, "<leader>fm", function()
+  require("conform").format { lsp_fallback = true }
+end, { desc = "general format file" })
